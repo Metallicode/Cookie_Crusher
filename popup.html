@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cookie Crusher</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#cookie"/></svg>
+      <h1>Cookie Crusher</h1>
+    </div>
+    <div class="tally" id="tally" title="Cookies crushed so far">0 crushed</div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-view="site">This site</button>
+    <button class="tab" role="tab" data-view="recent">Recent</button>
+    <button class="tab" role="tab" data-view="all">All sites</button>
+    <button class="tab tab-icon" role="tab" data-view="settings" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#gear"/></svg>
+    </button>
+  </nav>
+
+  <main id="view"></main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="fx" aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="cookie" viewBox="0 0 64 64">
+        <path d="M32 4a28 28 0 1 0 27.6 23.4 7 7 0 0 1-8.6-6.8 7 7 0 0 1-8.2-8.2A7 7 0 0 1 36 4.3 28 28 0 0 0 32 4Z" fill="var(--dough)" stroke="var(--crust)" stroke-width="3"/>
+        <circle cx="22" cy="24" r="4" fill="var(--chip)"/>
+        <circle cx="36" cy="30" r="3.5" fill="var(--chip)"/>
+        <circle cx="20" cy="40" r="3.5" fill="var(--chip)"/>
+        <circle cx="34" cy="46" r="4" fill="var(--chip)"/>
+        <circle cx="47" cy="40" r="3" fill="var(--chip)"/>
+      </symbol>
+      <symbol id="shield" viewBox="0 0 24 24">
+        <path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="shield-on" viewBox="0 0 24 24">
+        <path d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6l-8-3Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="target" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="12" cy="12" r="0.8" fill="currentColor"/>
+      </symbol>
+      <symbol id="chev" viewBox="0 0 24 24">
+        <path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="x" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
