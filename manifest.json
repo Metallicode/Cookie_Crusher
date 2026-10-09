@@ -3,7 +3,7 @@
   "name": "Cookie Crusher",
   "version": "1.1.0",
   "description": "See the cookies (and trackers) sites just gave you, crush them by hand or automatically when you leave.",
-  "permissions": ["cookies", "storage", "tabs", "alarms", "browsingData"],
+  "permissions": ["cookies", "storage", "alarms", "browsingData"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js",
